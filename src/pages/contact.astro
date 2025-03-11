@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Img from '../assets/img/Jr vector style.jpg'
+---
+
+<Layout>
+  
+<section class="grid grid-cols-6 grid-rows-5 gap-4 text-white p-4 pr-12 pl-12">
+  <div class="col-span-3 row-span-5">
+    <img src={Img.src} alt="Imagen creativa de Juan Carlos Wong Reyes" class="rounded-2xl scale-x-[-1]">
+  </div>
+  <div class="col-span-3 col-start-4 bg-gray-800 flex justify-center p-6 rounded-2xl items-center">
+    <h1 class="text-4xl">Donde la creatividad y las conexiones se encuentran</h1>
+  </div>
+  <div class="col-span-3 row-span-4 col-start-4 row-start-2 bg-gray-800 p-8 rounded-2xl">
+    <h1>¡Hablemos!</h1>
+    <ul>
+      <li>Facebook</li>
+      <li>Instagram</li>
+      <li>Celular</li>
+    </ul>
+    <h1>Dale un vistazo a mi trabajo</h1>
+    <p>Behance</p>
+  </div>
+</section>
+  
+</Layout>

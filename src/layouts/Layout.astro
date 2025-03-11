@@ -1,38 +1,28 @@
 ---
 import './src/styles/global.css'
-const {title, children} = Astro.props;
-const isActive = (route: string): string => Astro.url.pathname === route ? 'bg-red-400 m-2 rounded-lg text-white' : '';
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+const {title} = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title || 'Portfolio JC'}</title>
+		<title>{title || 'Ing. Juan Carlos Wong Reyes'}</title>
 	</head>
-	<body>
-		<body class="bg-gray-700 text-gray-900 min-h-screen">
-			<header class="p-5">
-				<nav class="flex justify-center">
-					<ul class="flex justify-center [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2 bg-white rounded-2xl text-black items-center">
-						<li><a href="/" class={isActive('/')}>Inicio</a></li>
-						<li><a href="/about" class={isActive('/about')}>Sobre mi</a></li>
-						<li><a href="/contact" class={isActive('/contact')}>Contacto</a></li>
-					</ul>
-				</nav>
-			</header>
+		<body class="bg-background text-gray-900 min-h-screen flex flex-col">
+			<Header/>
 	
-			<main class="max-w-7xl mx-auto p-5">
-				{children}
+			<main class="flex-grow">
+				<slot />
 			</main>
-	
-			<footer class="bg-gray-800 text-white text-center p-5">
-				<p>&copy; 2025 Mi Portafolio</p>
-			</footer>
+
+			<Footer/>
+			
 		</body>
-		<slot />
-	</body>
+	
 </html>
