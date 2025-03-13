@@ -14,15 +14,17 @@ const {title} = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title || 'Ing. Juan Carlos Wong Reyes'}</title>
 	</head>
-		<body class="bg-background text-gray-900 min-h-screen flex flex-col">
+		<body class=" text-gray-900 min-h-screen flex flex-col bg-primary">
 			<Header/>
 	
-			<main class="flex-grow">
+			<main class="flex-grow mt-4 lg:mt-8 mb-12 lg:mb-24 ">
 				<slot />
 			</main>
 
-			<Footer/>
+			<Footer class="mt-auto"/>
 			
 		</body>
 	
 </html>
+
+

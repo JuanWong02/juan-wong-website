@@ -1,0 +1,11 @@
+---
+type Props = {
+  skills: string[];
+}
+
+const {skills,} = Astro.props;
+---
+
+{skills.map((skill) => {
+  return <li class="hover:scale-130 cursor-default transform duration-200 hover:text-button-active">{skill}</li>
+})}

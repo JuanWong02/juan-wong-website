@@ -2,12 +2,12 @@
 const isActive = (route: string): string => Astro.url.pathname === route ? 'bg-button-active m-2 rounded-2xl text-white p-2 md:p-4 md:text-3xl text-2xl animate-scale' : 'transition-all delay-150 hover:scale-150';
 ---
 
-<header class="p-6 pb-2 lg:p-12 relative">
+<header class="p-6 pb-2 lg:p-12 transition-all duration-300 relative">
   <nav class="flex justify-center">
-    <ul class="flex justify-around w-full p-2 bg-container rounded-4xl text-black items-center text-lg md:w-[70%] lg:w-[50%] xl:w-[40%] py-1">
-      <li class="flex-1 text-center md:text-2xl"><a href="/" class={`block ${isActive('/')}`}>Inicio</a></li>
-      <li class="flex-1 text-center md:text-2xl"><a href="/experience" class={`block  ${isActive('/experience')}`}>Experiencia</a></li>
-      <li class="flex-1 text-center md:text-2xl"><a href="/contact" class={`block ${isActive('/contact')}`}>Contacto</a></li>
+    <ul class="flex justify-around w-full p-2 bg-container rounded-4xl text-black items-center text-lg sm:w-[75%] md:w-[70%] lg:w-[50%] xl:w-[40%] py-1">
+      <li class="flex-1 text-center text-lg sm:text-xl md:text-2xl"><a href="/" rel="prefetch"  class={`block ${isActive('/')}`}>Inicio</a></li>
+      <li class="flex-1 text-center text-lg sm:text-xl md:text-2xl"><a href="/experience" rel="prefetch" class={`block  ${isActive('/experience')}`}>Experiencia</a></li>
+      <li class="flex-1 text-center text-lg sm:text-xl md:text-2xl"><a href="/contact" rel="prefetch" class={`block ${isActive('/contact')}`}>Contacto</a></li>
     </ul>
   </nav>	
 </header>
