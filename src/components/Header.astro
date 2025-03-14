@@ -4,7 +4,7 @@ const isActive = (route: string): string => Astro.url.pathname === route ? 'bg-b
 
 <header class="p-6 pb-2 lg:p-12 transition-all duration-300 relative">
   <nav class="flex justify-center">
-    <ul class="flex justify-around w-full p-2 bg-container rounded-4xl text-black items-center text-lg sm:w-[75%] md:w-[70%] lg:w-[50%] xl:w-[40%] py-1">
+    <ul class="flex justify-around w-full p-2 bg-container rounded-4xl text-black items-center text-lg sm:w-[75%] md:w-[70%] lg:w-[50%] xl:w-[40%] py-1 font-text font-medium">
       <li class="flex-1 text-center text-lg sm:text-xl md:text-2xl"><a href="/" rel="prefetch"  class={`block ${isActive('/')}`}>Inicio</a></li>
       <li class="flex-1 text-center text-lg sm:text-xl md:text-2xl"><a href="/experience" rel="prefetch" class={`block  ${isActive('/experience')}`}>Experiencia</a></li>
       <li class="flex-1 text-center text-lg sm:text-xl md:text-2xl"><a href="/contact" rel="prefetch" class={`block ${isActive('/contact')}`}>Contacto</a></li>

@@ -1,0 +1,16 @@
+---
+type Props = {
+  links: {
+    text: string;
+    url: string
+  }[];
+}
+
+const {links} = Astro.props;
+---
+
+{links.map((link) => {
+  return  <li class="hover:text-button-active cursor-pointer hover:scale-110 transform duration-300 delay-100">
+      <a href={link.url} target="_blank" rel="noopener noreferrer">{link.text}</a>
+    </li>
+})}

@@ -1,12 +1,20 @@
 @import "tailwindcss";
+@import "@fontsource/roboto";
+@import "@fontsource/bebas-neue";
+
 
 @theme {
   --color-background: #54565D;
   --color-button-active: #E83151;
   --color-container: #FDFDFD;
   --color-primary: #212529;
+  --font-title: 'Bebas Neue','sans-serif';
+  --font-text: 'Roboto','sans-serif';
+
 
 }
+
+
 @keyframes animScale {
   0% {
     transform: scale(0) translateY(20px);
@@ -47,6 +55,21 @@
     transform: translateX(0);
     opacity: 1;
   }
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-10vh);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-down {
+  animation: slideDown 0.3s ease-in-out;
 }
 
 .animate-slide-right {
