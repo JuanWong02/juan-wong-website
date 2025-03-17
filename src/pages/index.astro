@@ -1,18 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import FotoPerfil from '../assets/img/perfil.jpg';
+import FotoPerfil from '../assets/img/perfil.webp';
 ---
 
-<Layout>
+<Layout title="Ing. Juan Carlos Wong Reyes | Inicio">
 
-	<section class="min-h-screen transition-all duration-500 ease-in-out scale-95 md:opacity-100 md:scale-100 flex flex-col gap-x-8  pr-6 pl-6  xl:grid xl:grid-cols-6 xl:grid-rows-5 lg:p-12 lg:pt-4 text-white max-w-screen-2xl mx-auto">
-    <div class="mb-8 md:pt-8 lg:pt-0 lg:mb-0 md:p-4 xl:col-span-3 flex items-center flex-col justify-center  rounded-2xl lg:p-6 animate-slide-left ">
-			<h1 class="text-4xl md:text-5xl transition-all duration-300 lg:text-6xl xl:text-6xl font-title">Juan Carlos Wong Reyes</h1>
-			<h4 class="text-2xl md:text-3xl lg:text-4xl p-2 transition-all duration-200 font-text items-center italic">Ingeniero Multimedia</h4>
+	<section class="min-h-screen h-auto transition-all duration-500 ease-in-out scale-95 md:opacity-100 md:scale-100 flex flex-col gap-x-8  pr-6 pl-6  xl:grid xl:grid-cols-6 xl:grid-rows-5 lg:p-12 lg:pt-4 text-white max-w-screen-2xl mx-auto">
+    <div class="mb-8 md:pt-8 lg:pt-0 lg:mb-0 md:p-1 xl:col-span-3 flex items-center flex-col justify-center  rounded-2xl lg:p-2 animate-slide-left ">
+			<h1 class="text-2xl sm:text-4xl md:text-5xl transition-all duration-300 lg:text-4xl xl:text-5xl font-title font-bold text-center">Juan Carlos Wong Reyes</h1>
+			<h2 class="text-xl sm:text-3xl md:text-4xl lg:text-4xl p-2 transition-all duration-200 font-text items-center text-secondary">Ingeniero Multimedia</h2>
 		</div>
     <div class=" p-4 rounded-2xl lg:p-2 order-3 xl:col-span-3 xl:row-span-4 xl:col-start-1 xl:row-start-2  animate-slide-left delay-200 font-text
 		 text-lg sm:text-xl lg:text-2xl max-w-prose md:max-w-full lg:text-justify leading-relaxed">
-			<p>Mi nombre es Juan Carlos Wong Reyes, soy ingeniero en multimedia y me caracterizo por ser
+			<p >Mi nombre es Juan Carlos Wong Reyes, soy ingeniero en multimedia y me caracterizo por ser
 				una persona que se apasiona por lo que hace; me encanta todo lo relacionado con edición, ya sea de imagenes,
 				video, audio, etc. De igual forma me gusta la programación, el poder crear algo o transformarlo y ver en lo que se transformó
 				despues de dedicarle tiempo, es un sentimiento espectacular.
@@ -45,7 +45,7 @@ import FotoPerfil from '../assets/img/perfil.jpg';
 			
 		</div>
     <div class="col-span-3 row-span-5 col-start-4 row-start-1 flex items-center mb-8 xl:mb-0 pl-2 pr-2">
-			<img class="rounded-2xl object-cover h-full mx-auto animate-rotate-y hover:scale-102 transition-transform duration-300 ease-in-out" src={FotoPerfil.src} alt="Imagen de perfil de Juan Carlos Wong Reyes">
+			<img class="rounded-2xl object-cover h-full mx-auto animate-rotate-y hover:scale-102 transition-transform duration-300 ease-in-out" loading="lazy" src={FotoPerfil.src} alt="Imagen de perfil de Juan Carlos Wong Reyes">
 		</div>
 	</section>  
 

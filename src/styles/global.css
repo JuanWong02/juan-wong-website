@@ -1,15 +1,17 @@
 @import "tailwindcss";
-@import "@fontsource/roboto";
-@import "@fontsource/bebas-neue";
+@import "@fontsource/inter";
+@import "@fontsource/poppins";
+
 
 
 @theme {
-  --color-background: #54565D;
-  --color-button-active: #E83151;
-  --color-container: #FDFDFD;
+  --color-background: #373A40;
+  --color-button-active: #011627;
+  --color-container: #fdfffc;
   --color-primary: #212529;
-  --font-title: 'Bebas Neue','sans-serif';
-  --font-text: 'Roboto','sans-serif';
+  --color-secondary: #E83151;
+  --font-title: 'Inter','sans-serif';
+  --font-text: 'Poppins','sans-serif';
 
 
 }
