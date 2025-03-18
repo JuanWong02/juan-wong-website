@@ -7,12 +7,11 @@ const routes = [
   { name: "Contacto", path: `${base}/contact/` },
 ];
 
-const normalizePath = (path: string) => path.replace(/\/$/, ""); // Elimina la barra final
+const normalizePath = (path: string) => path.replace(/\/$/, ""); 
 
 const isActive = (route: string) => {
   const currentPath = normalizePath(Astro.url.pathname);
   if (route === `${base}/` && (currentPath === base || currentPath === `${base}/`)) {
-    // Si es la ruta principal, asegúrate de que también funciona sin la barra final
     return 'bg-container m-2 rounded-2xl text-primary p-2 md:p-4 md:text-3xl text-xl animate-scale';
   }
 
