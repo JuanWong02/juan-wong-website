@@ -1,13 +1,15 @@
 ---
 const base = "/juan-wong-website";
 
-const isActive = (route: string): string => {
+const routes = [
+  { name: "Inicio", path: "/" },
+  { name: "Experiencia", path: "/experience" },
+  { name: "Contacto", path: "/contact" },
+];
 
-  const currentPath = Astro.url.pathname.replace(base, "") || "/";
-
-  return currentPath === route
-    ? 'bg-container m-2 rounded-2xl text-primary p-2 md:p-4 md:text-3xl text-xl animate-scale'
-    : 'transition-all delay-150 hover:scale-125';
+// Lógica para determinar la clase activa
+const isActive = (route: string) => {
+  return Astro.url.pathname === base + route ? 'bg-container m-2 rounded-2xl text-primary p-2 md:p-4 md:text-3xl text-xl animate-scale' : 'transition-all delay-150 hover:scale-125';
 };
 
 ---
@@ -15,9 +17,16 @@ const isActive = (route: string): string => {
 <header class="p-6 pb-2 lg:p-12 transition-all duration-300 relative">
   <nav class="flex justify-center">
     <ul class="flex justify-around w-full p-2 bg-background shadow-2xl rounded-4xl text-container items-center text-lg sm:w-[75%] md:w-[70%] lg:w-[50%] xl:w-[40%] py-1 font-text">
-      <li class=" flex-1 text-center text-sm sm:text-xl md:text-2xl"><a href=`${base}/` rel="prefetch" title="Página principal de presentación de Juan Carlos Wong Reyes"   class={`block ${isActive('/')}`}>Inicio</a></li>
-      <li class=" flex-1 text-center text-sm sm:text-xl md:text-2xl"><a href=`${base}/experience` title="Página sobre la experiencia de Juan Carlos Wong Reyes" rel="prefetch" class={`block  ${isActive('/experience')}`}>Experiencia</a></li>
-      <li class=" flex-1 text-center text-sm sm:text-xl md:text-2xl"><a href=`${base}/contact` title="Página con al información de contacto de Juan Carlos Wong Reyes" rel="prefetch" class={`block ${isActive('/contact')}`}>Contacto</a></li>
+      {routes.map(route => (
+        <li class="flex-1 text-center text-sm sm:text-xl md:text-2xl">
+          <a href={`${base}${route.path}`} 
+             rel="prefetch" 
+             title={`Página de ${route.name}`} 
+             class={`block ${isActive(route.path)}`}>
+            {route.name}
+          </a>
+        </li>
+      ))}
     </ul>
   </nav>	
 </header>
