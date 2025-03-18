@@ -11,7 +11,7 @@ const {links} = Astro.props;
 ---
 
 {links.map((link) => {
-  return  <li class="hover:text-secondary cursor-pointer hover:scale-110 transform duration-300 delay-100 pt-2 pb-2" >
+  return  <li class="hover:text-button-active cursor-pointer hover:scale-110 transform duration-300 delay-100 pt-2 pb-2" >
     <i class={`fa ${link.icon} mr-4`}></i>
       <a href={link.url} target="_blank" rel="noopener noreferrer">{link.text}</a>
     </li>

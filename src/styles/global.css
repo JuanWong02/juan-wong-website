@@ -6,17 +6,13 @@
 
 @theme {
   --color-background: #373A40;
-  --color-button-active: #011627;
+  --color-button-active: #FF1E56;
   --color-container: #fdfffc;
   --color-primary: #212529;
-  --color-secondary: #E83151;
+  --color-secondary: #FFAC41;
   --font-title: 'Inter','sans-serif';
   --font-text: 'Poppins','sans-serif';
-
-
 }
-
-
 @keyframes animScale {
   0% {
     transform: scale(0) translateY(20px);
