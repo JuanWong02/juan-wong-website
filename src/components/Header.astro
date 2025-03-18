@@ -2,13 +2,13 @@
 const base = "/juan-wong-website";
 
 const routes = [
-  { name: "Inicio", path: "/" },
-  { name: "Experiencia", path: "/experience/" },
-  { name: "Contacto", path: "/contact/" },
+  { name: "Inicio", path: `${base}/` },
+  { name: "Experiencia", path: `${base}/experience/` },
+  { name: "Contacto", path: `${base}/contact/` },
 ];
 
 const isActive = (route: string) => {
-  return Astro.url.pathname === base + route ? 'bg-container m-2 rounded-2xl text-primary p-2 md:p-4 md:text-3xl text-xl animate-scale' : 'transition-all delay-150 hover:scale-125';
+  return Astro.url.pathname === route ? 'bg-container m-2 rounded-2xl text-primary p-2 md:p-4 md:text-3xl text-xl animate-scale' : 'transition-all delay-150 hover:scale-125';
 };
 
 ---
@@ -18,7 +18,7 @@ const isActive = (route: string) => {
     <ul class="flex justify-around w-full p-2 bg-background shadow-2xl rounded-4xl text-container items-center text-lg sm:w-[75%] md:w-[70%] lg:w-[50%] xl:w-[40%] py-1 font-text">
       {routes.map(route => (
         <li class="flex-1 text-center text-sm sm:text-xl md:text-2xl">
-          <a href={`${base}${route.path}`} 
+          <a href={`${route.path}`} 
              rel="prefetch" 
              title={`Página de ${route.name}`} 
              class={`block ${isActive(route.path)}`}>
