@@ -2,16 +2,13 @@
 const base = "/juan-wong-website";
 
 const isActive = (route: string): string => {
-  // Obtenemos la ruta actual
-  const pathname = Astro.url.pathname;
 
-  const currentPath = pathname.startsWith(base) ? pathname.replace(base, "") : pathname;
+  const currentPath = Astro.url.pathname.replace(base, "") || "/";
 
   return currentPath === route
     ? 'bg-container m-2 rounded-2xl text-primary p-2 md:p-4 md:text-3xl text-xl animate-scale'
     : 'transition-all delay-150 hover:scale-125';
 };
-
 
 ---
 
