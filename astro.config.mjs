@@ -11,4 +11,6 @@ export default defineConfig({
   devToolbar: {
     enabled: false,
   },
+  site: "https://juanwong02.github.io",
+  base: "juan-wong-website",
 });
