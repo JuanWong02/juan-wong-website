@@ -5,9 +5,9 @@ const isActive = (route: string): string => Astro.url.pathname === route ? 'bg-c
 <header class="p-6 pb-2 lg:p-12 transition-all duration-300 relative">
   <nav class="flex justify-center">
     <ul class="flex justify-around w-full p-2 bg-background shadow-2xl rounded-4xl text-container items-center text-lg sm:w-[75%] md:w-[70%] lg:w-[50%] xl:w-[40%] py-1 font-text">
-      <li class=" flex-1 text-center text-sm sm:text-xl md:text-2xl"><a href="/" rel="prefetch" title="Página principal de presentación de Juan Carlos Wong Reyes"  class={`block ${isActive('/')}`}>Inicio</a></li>
-      <li class=" flex-1 text-center text-sm sm:text-xl md:text-2xl"><a href="/experience" title="Página sobre la experiencia de Juan Carlos Wong Reyes" rel="prefetch" class={`block  ${isActive('/experience')}`}>Experiencia</a></li>
-      <li class=" flex-1 text-center text-sm sm:text-xl md:text-2xl"><a href="/contact" title="Página con al información de contacto de Juan Carlos Wong Reyes" rel="prefetch" class={`block ${isActive('/contact')}`}>Contacto</a></li>
+      <li class=" flex-1 text-center text-sm sm:text-xl md:text-2xl"><a href="/juan-wong-website" rel="prefetch" title="Página principal de presentación de Juan Carlos Wong Reyes"  class={`block ${isActive('/juan-wong-website/')}`}>Inicio</a></li>
+      <li class=" flex-1 text-center text-sm sm:text-xl md:text-2xl"><a href="/juan-wong-website/experience" title="Página sobre la experiencia de Juan Carlos Wong Reyes" rel="prefetch" class={`block  ${isActive('/juan-wong-website/experience')}`}>Experiencia</a></li>
+      <li class=" flex-1 text-center text-sm sm:text-xl md:text-2xl"><a href="/juan-wong-website/contact" title="Página con al información de contacto de Juan Carlos Wong Reyes" rel="prefetch" class={`block ${isActive('/juan-wong-website/contact')}`}>Contacto</a></li>
     </ul>
   </nav>	
 </header>

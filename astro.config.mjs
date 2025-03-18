@@ -12,5 +12,5 @@ export default defineConfig({
     enabled: false,
   },
   site: "https://juanwong02.github.io",
-  base: "juan-wong-website",
+  base: "/juan-wong-website",
 });

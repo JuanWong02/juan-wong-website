@@ -1,5 +1,5 @@
 ---
-import './src/styles/global.css'
+import '../styles/global.css';
 import NotFound from '../assets/img/not-found.webp';
 const title = "Página no encontrada";
 const message = "Parece que te perdiste, regresa al inicio y descubre más sobre mi"
@@ -17,7 +17,7 @@ const message = "Parece que te perdiste, regresa al inicio y descubre más sobre
   </head>
   <body class="flex flex-col items-center justify-center h-screen bg-primary text-center mt-4">
     <h1 class=" font-title font-bold text-container rounded-3xl  p-4 mt-4 text-6xl sm:text-8xl lg:text-10xl sm:p-2">{title}</h1>
-    <a href="/" class=" font-text font-medium m-8 px-3 py-2 sm:px-5 sm:py-4 md:px-8 md:py-4  bg-button-active text-container  rounded-lg text-xl sm:text-xl md:text-3xl hover:font-bold transition-transform duration-200 delay-100 hover:scale-150">
+    <a href="/juan-wong-website" class=" font-text font-medium m-8 px-3 py-2 sm:px-5 sm:py-4 md:px-8 md:py-4  bg-button-active text-container  rounded-lg text-xl sm:text-xl md:text-3xl hover:font-bold transition-transform duration-200 delay-100 hover:scale-150">
       Volver al inicio
     </a>
       <img class="rounded-full mx-auto h-[30%] mt-2  sm:h-[35%]  md:h-[40%] mb-4 hover:scale-105 hover:rotate-2 transition-transform duration-200 delay-100" src={NotFound.src} alt="Imagen tipo sketch de Juan Carlos Wong Reyes de perfil, mirando hacia la izquierda">
