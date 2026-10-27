@@ -1,140 +1,86 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import FotoPerfil from '../assets/img/perfil.webp';
+import FocusAreas  from '../components/FocusAreas.astro';
+import Education  from '../components/Education.astro';
+import Characteristics from '../components/Characteristics.astro';
+import ClosingCTA from '../components/ClosingCTA.astro';
 ---
 
 <Layout title="Ing. Juan Carlos Wong Reyes | Inicio">
-  <main class="mx-auto max-w-7xl px-5 py-8 text-white sm:px-8 lg:px-12 lg:py-12">
+  <div class="mx-auto max-w-7xl px-5 pb-16 sm:px-8 lg:px-12">
 
     <!-- Presentación principal -->
-    <section class="grid items-center gap-10 md:grid-cols-2 md:gap-14">
-      <div class="order-2 space-y-6 md:order-1 animate-slide-left">
-        <p class="font-text text-sm font-semibold uppercase tracking-[0.25em] text-secondary">
-          Portafolio personal
-        </p>
+    <section class="grid items-center gap-10 py-10 sm:py-16 lg:grid-cols-2 lg:gap-16 lg:py-20">
+      <div class="order-2 flex flex-col items-start lg:order-1">
+        <span class="mb-5 inline-flex items-center gap-2 rounded-full border border-secondary/30 bg-secondary/10 px-4 py-2 text-sm font-medium text-secondary">
+          <span class="h-2 w-2 rounded-full bg-secondary"></span>
+          Ingeniero Multimedia
+        </span>
 
-        <h1 class="font-title text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
-          Juan Carlos Wong Reyes
+        <h1 class="font-title text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl xl:text-6xl">
+          Juan Carlos
+          <span class="block text-secondary">Wong Reyes</span>
         </h1>
 
-        <h2 class="font-title text-2xl font-medium text-secondary sm:text-3xl">
-          Ingeniero Multimedia
-        </h2>
-
-        <p class="max-w-xl text-base leading-8 text-slate-300 sm:text-lg">
-          Me apasiona crear, editar y transformar contenido multimedia.
-          Disfruto trabajar con imagen, video y audio, así como explorar
-          la programación para convertir ideas en soluciones concretas.
+        <p class="mt-6 max-w-xl text-base leading-8 text-slate-300 sm:text-lg">
+          Me apasiona crear, editar y transformar ideas mediante el diseño, los medios audiovisuales y la programación. Disfruto desarrollar proyectos, resolver problemas y ver cómo una idea toma forma a través del trabajo y la creatividad.
         </p>
 
-        <div class="flex flex-wrap gap-4 pt-2">
+        <div class="mt-8 flex flex-wrap gap-4">
           <a
             href="/juan-wong-website/experience/"
-            class="inline-flex items-center justify-center rounded-xl bg-secondary px-6 py-3 font-semibold text-primary transition-transform duration-200 hover:-translate-y-1"
+            class="inline-flex items-center justify-center rounded-xl bg-secondary px-6 py-3 font-semibold text-slate-950 transition-colors duration-200 hover:bg-amber-300"
           >
-            Ver experiencia
+            Ver mi trabajo
+            <i class="fa-solid fa-arrow-right ml-2"></i>
           </a>
 
           <a
             href="/juan-wong-website/contact/"
-            class="inline-flex items-center justify-center rounded-xl border border-slate-600 px-6 py-3 font-semibold text-white transition-colors duration-200 hover:border-secondary hover:text-secondary"
+            class="inline-flex items-center justify-center rounded-xl border border-slate-600 px-6 py-3 font-semibold text-slate-200 transition-colors duration-200 hover:border-sky-400 hover:text-sky-400"
           >
             Contactarme
           </a>
         </div>
+
+        <div class="mt-10 flex flex-wrap gap-3">
+          <span class="rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2 text-sm text-slate-300">Diseño multimedia</span>
+          <span class="rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2 text-sm text-slate-300">Edición audiovisual</span>
+          <span class="rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2 text-sm text-slate-300">Programación</span>
+        </div>
       </div>
 
-      <div class="order-1 flex justify-center md:order-2 animate-slide-right">
-        <div class="relative w-full max-w-md">
-          <div class="absolute -inset-3 rounded-3xl border border-secondary/30"></div>
+      <div class="order-1 mx-auto mb-8 w-full max-w-md lg:order-2 lg:mb-0 lg:max-w-none">
+        <div class="relative mx-auto max-w-sm">
+          <div class="absolute -inset-3 rounded-3xl border border-secondary/20"></div>
+          <div class="absolute -right-5 -top-5 h-28 w-28 rounded-full bg-sky-400/10 blur-2xl"></div>
 
           <img
-            class="relative aspect-[4/5] max-h-[560px] w-full rounded-2xl object-cover shadow-2xl"
+            class="relative aspect-[4/5] w-full rounded-3xl border border-slate-700 object-cover shadow-2xl shadow-black/30"
             src={FotoPerfil.src}
             alt="Fotografía de Juan Carlos Wong Reyes"
           />
+
+          <div class="absolute -bottom-5 left-4 right-4 rounded-2xl border border-slate-700 bg-slate-900/95 p-4 shadow-xl backdrop-blur-sm sm:left-6 sm:right-6">
+            <p class="font-title text-lg font-semibold text-white">Creatividad y tecnología</p>
+            <p class="mt-1 text-sm text-slate-400">Diseño, contenido digital y desarrollo</p>
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- Áreas de enfoque -->
+    <FocusAreas/>
 
     <!-- Formación académica -->
-    <section class="mt-24">
-      <div class="mb-8">
-        <p class="font-text text-sm font-semibold uppercase tracking-[0.2em] text-secondary">
-          Mi trayectoria
-        </p>
-        <h2 class="mt-2 font-title text-3xl font-bold sm:text-4xl">
-          Formación académica
-        </h2>
-      </div>
-
-      <article class="rounded-2xl border border-slate-700/70 bg-container p-6 sm:p-8">
-        <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-          <div>
-            <h3 class="font-title text-xl font-semibold sm:text-2xl">
-              Ingeniero Multimedia
-            </h3>
-            <p class="mt-2 text-slate-300">
-              Centro Regional de Estudios Superiores Palmore, Chihuahua
-            </p>
-          </div>
-
-          <span class="w-fit rounded-full border border-secondary/30 px-4 py-2 text-sm text-secondary">
-            2018 — 2022
-          </span>
-        </div>
-      </article>
-    </section>
+    <Education/>
 
     <!-- Características personales -->
-    <section class="mt-24">
-      <div class="mb-8">
-        <p class="font-text text-sm font-semibold uppercase tracking-[0.2em] text-secondary">
-          Mi forma de trabajar
-        </p>
-        <h2 class="mt-2 font-title text-3xl font-bold sm:text-4xl">
-          Características
-        </h2>
-      </div>
-
-      <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
-        {[
-          'Responsable',
-          'Honesto',
-          'Dedicado',
-          'Puntual',
-          'Ordenado'
-        ].map((caracteristica) => (
-          <article class="rounded-2xl border border-slate-700/70 bg-container p-5 text-center transition-colors duration-200 hover:border-secondary/60">
-            <p class="font-title text-base font-semibold sm:text-lg">
-              {caracteristica}
-            </p>
-          </article>
-        ))}
-      </div>
-    </section>
+    <Characteristics/>
 
     <!-- Cierre -->
-    <section class="mt-24 rounded-3xl border border-slate-700/70 bg-container px-6 py-12 text-center sm:px-12 sm:py-16">
-      <p class="font-text text-sm font-semibold uppercase tracking-[0.2em] text-secondary">
-        ¿Conocemos mi trabajo?
-      </p>
+    <ClosingCTA/>
 
-      <h2 class="mx-auto mt-4 max-w-2xl font-title text-3xl font-bold sm:text-4xl">
-        Descubre mi experiencia y los proyectos en los que he trabajado
-      </h2>
-
-      <p class="mx-auto mt-5 max-w-xl leading-7 text-slate-300">
-        Explora las herramientas que utilizo y conoce más sobre mi perfil profesional.
-      </p>
-
-      <a
-        href="/juan-wong-website/experience/"
-        class="mt-8 inline-flex rounded-xl bg-secondary px-6 py-3 font-semibold text-primary transition-transform duration-200 hover:-translate-y-1"
-      >
-        Ver trabajos
-      </a>
-    </section>
-
-  </main>
+  </div>
 </Layout>

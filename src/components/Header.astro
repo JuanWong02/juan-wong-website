@@ -13,26 +13,34 @@ const normalizePath = (path: string) => path.replace(/\/$/, "");
 const isActive = (route: string) => {
   const currentPath = normalizePath(Astro.url.pathname);
 
-  if (route === `${base}/` && (currentPath === base || currentPath === `${base}/`)) {
-    return 'bg-secondary text-primary rounded-xl px-3 py-2 sm:px-4 font-semibold';
+  if (
+    route === `${base}/` &&
+    (currentPath === base || currentPath === `${base}/`)
+  ) {
+    return true;
   }
 
-  return Astro.url.pathname === route
-    ? 'bg-secondary text-primary rounded-xl px-3 py-2 sm:px-4 font-semibold'
-    : 'text-slate-300 rounded-xl px-3 py-2 sm:px-4 transition-colors duration-200 hover:bg-white/5 hover:text-white';
+  return currentPath === normalizePath(route);
 };
 ---
 
-<header class="relative px-5 pt-6 pb-2 transition-all duration-300 sm:px-8 lg:px-12 lg:pt-8">
+<header class="relative px-5 pt-6 pb-3 sm:px-8 lg:px-12 lg:pt-8">
   <nav class="mx-auto flex max-w-7xl justify-center">
-    <ul class="flex w-full items-center justify-around gap-1 rounded-2xl border border-slate-700/70 bg-container/90 p-2 font-text text-sm shadow-xl backdrop-blur-md sm:w-[75%] sm:gap-2 sm:text-base md:w-[70%] lg:w-[60%] xl:w-[50%]">
+    <ul class="flex w-full items-center justify-around gap-2 rounded-2xl border border-slate-700/70 bg-container/90 p-3 font-text text-base shadow-xl backdrop-blur-md sm:w-[80%] sm:gap-3 sm:text-lg md:w-[75%] lg:w-[65%] xl:w-[55%]">
       {routes.map((route) => (
         <li class="flex-1 text-center">
           <a
             href={route.path}
             rel="prefetch"
             title={`Página de ${route.name}`}
-            class={`block ${isActive(route.path)}`}
+            aria-current={isActive(route.path) ? "page" : undefined}
+            class:list={[
+              "block rounded-xl px-4 py-3 sm:px-5 sm:py-3.5",
+              "transition-all duration-300",
+              isActive(route.path)
+                ? "bg-secondary text-primary font-semibold scale-105 animate-scale"
+                : "text-slate-300 hover:scale-105 hover:bg-white/5 hover:text-white"
+            ]}
           >
             {route.name}
           </a>

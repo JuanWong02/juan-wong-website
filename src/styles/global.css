@@ -8,8 +8,8 @@
   --color-background: #0b1120;
   --color-container: #111c30;
   --color-primary: #0b1120;
-  --color-secondary: #f59e0b;
-  --color-button-active: #f59e0b;
+  --color-secondary: #fbbf24;
+  --color-button-active: var(--color-secondary);
 
   /* Colores complementarios */
   --color-accent: #38bdf8;
