@@ -1,11 +1,94 @@
 ---
-type Props = {
-  skills: string[];
-}
+type Skill = {
+  name: string;
+  abbreviation: string;
+  description: string;
+};
 
-const {skills,} = Astro.props;
+type Props = {
+  title: string;
+  description: string;
+  icon: string;
+  skills: Skill[];
+  variant?: "amber" | "sky";
+};
+
+const {
+  title,
+  description,
+  icon,
+  skills,
+  variant = "amber",
+} = Astro.props;
+
+const accent = variant === "sky"
+  ? {
+      text: "text-sky-400",
+      bg: "bg-sky-400/10",
+      border: "border-sky-400/20",
+      hover: "hover:border-sky-400/40",
+    }
+  : {
+      text: "text-secondary",
+      bg: "bg-secondary/10",
+      border: "border-secondary/20",
+      hover: "hover:border-secondary/40",
+    };
 ---
 
-{skills.map((skill) => {
-  return <li class="hover:scale-130 cursor-default transform duration-200 font-text h-auto sm:h-6  md:h-12 lg:h-24 hover:text-button-active">{skill}</li>
-})}
+<section class="flex h-full flex-col rounded-2xl border border-border/70 bg-container p-5 shadow-lg shadow-black/10 transition-all duration-300 hover:border-border sm:p-6">
+  <div class="mb-5 flex items-start gap-3 rounded-xl border border-border/50 bg-background/50 p-4">
+    <div class:list={[
+      "flex h-11 w-11 shrink-0 items-center justify-center rounded-xl",
+      accent.bg,
+      accent.text,
+    ]}>
+      <i class={`fa-solid ${icon} text-xl`}></i>
+    </div>
+
+    <div class="min-w-0 flex-1">
+      <h3 class="font-title text-lg font-semibold leading-tight text-white sm:text-xl">
+        {title}
+      </h3>
+
+      <p class="mt-1 text-sm leading-relaxed text-text-muted">
+        {description}
+      </p>
+    </div>
+
+    <span class:list={[
+      "shrink-0 rounded-lg px-2 py-1 text-xs font-semibold",
+      accent.bg,
+      accent.text,
+    ]}>
+      {skills.length}
+    </span>
+  </div>
+
+  <ul class="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-1">
+    {skills.map((skill) => (
+      <li class:list={[
+        "group flex min-w-0 items-center gap-3 rounded-xl border border-border/50",
+        "bg-background/40 p-3 transition-all duration-300 hover:bg-background/80",
+        accent.hover,
+      ]}>
+        <span class:list={[
+          "flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-xs font-bold",
+          accent.bg,
+          accent.text,
+        ]}>
+          {skill.abbreviation}
+        </span>
+
+        <div class="min-w-0">
+          <p class="truncate text-sm font-semibold text-white">
+            {skill.name}
+          </p>
+          <p class="mt-0.5 text-xs leading-relaxed text-text-muted">
+            {skill.description}
+          </p>
+        </div>
+      </li>
+    ))}
+  </ul>
+</section>

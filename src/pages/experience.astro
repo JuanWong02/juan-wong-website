@@ -1,58 +1,156 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import JobCard from '../components/JobCard.astro';
-import Skills from '../components/Skills.astro';
+import Layout from "../layouts/Layout.astro";
+import JobCard from "../components/JobCard.astro";
+import Skills from "../components/Skills.astro";
 ---
 
 <Layout title="Ing. Juan Carlos Wong Reyes | Experiencia">
-	<section class="min-h-screen  transition-all duration-500 ease-in-out scale-95 md:opacity-100 md:scale-100 flex flex-col justify-center gap-4 lg:gap-8 p-2 md:p-6 pt-5  lg:grid lg:grid-cols-6 lg:grid-rows-5 lg:p-12 lg:pt-4 text-container overflow-hidden max-w-screen-md lg:max-w-screen-2xl mx-auto">
-    
-      <div class="col-span-6 flex  justify-center self-center items-center text-4xl md:text-6xl animate-slide-down duration-300 transition-all font-title font-extrabold ">
-        <h1 class="text-center">Experiencia Laboral</h1>
-      </div>
-      <div class="col-span-6 row-span-5 row-start-2 m-4 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 justify-center flex-1 ">
-       <JobCard
-       company='Honeywell Chihuahua'
-       role='Creador Multimedia'
-       period='marzo de 2022 - agosto de 2023'
-       tasks={['Captura de foto y video','Edición de imagen y video','Creación de comunicados','Supervisión de los canales de comunicación']}
-       />
+  <div class="mx-auto w-full max-w-7xl px-5 pb-8 pt-8 sm:px-8 sm:pt-12 lg:px-12">
 
-       <JobCard
-       company='CRM-CA'
-       role='Consultor Siebel'
-       period='diciembre de 2023 - enero de 2026'
-       tasks={['Testing en Siebel','Solución de errores','Desarrollo de funcionalidades','Creación de Datafix']}
-       />       
-       
+    <!-- Introducción -->
+    <section class="mb-12 sm:mb-16">
+      <div class="animate-enter mb-4 inline-flex items-center gap-2 rounded-full border border-secondary/20 bg-secondary/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-secondary sm:text-sm">
+        <span class="h-2 w-2 animate-pulse rounded-full bg-secondary animate-breathe"></span>
+        Trayectoria y capacidades
+      </div>
 
+      <h1 class="animate-enter animate-delay-1 max-w-3xl font-title text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
+        Experiencia laboral
+        <span class="text-secondary">&amp; habilidades</span>
+      </h1>
+
+      <p class="animate-enter animate-delay-2 mt-5 max-w-2xl text-base leading-relaxed text-text-muted sm:text-lg">
+        Una trayectoria que combina el desarrollo y mantenimiento de software empresarial con la producción audiovisual y la comunicación visual.
+      </p>
+    </section>
+
+    <!-- Trayectoria -->
+    <section class="mb-16 sm:mb-20">
+      <div class="mb-6 flex items-center gap-3 sm:mb-8">
+        <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-secondary/10 text-secondary">
+          <i class="fa-solid fa-timeline text-lg"></i>
+        </div>
+
+        <div>
+          <h2 class="font-title text-2xl font-bold text-white sm:text-3xl">
+            Trayectoria profesional
+          </h2>
+          <p class="mt-1 text-sm text-text-muted">
+            Experiencia en tecnología y producción multimedia
+          </p>
+        </div>
       </div>
-      <div class="col-span-6 row-start-7 flex justify-center items-center text-4xl md:text-6xl animate-slide-down transition-all ease-in-out font-title font-extrabold">
-        <h1>Skills</h1>
-      </div>
-      <div class="col-span-6 row-span-4 row-start-8 flex justify-center md:m-4">
-        <ul class="grid grid-cols-2 lg:grid-cols-4 gap-x-10 pt-4 gap-y-6 md:gap-y-2 text-center text-lg md:text-3xl items-center">
-          <Skills
-          skills={[
-            'Ingles',
-            'Photoshop',
-            'After Effects',
-            'Premier Pro',
-            'Davinci Resolve',
-            'Audition',
-            'Lightroom',
-            'Ilustrator',
-            'InDesign',
-            'Javascript',
-            'Python',
-            'Desarrollo Web'
+
+      <div class="space-y-5 sm:space-y-6">
+        <JobCard
+          company="CRM-CA"
+          role="Consultor Siebel"
+          period="Diciembre de 2023 – enero de 2026"
+          category="Software empresarial"
+          icon="fa-laptop-code"
+          tasks={[
+            "Testing y validación funcional en Siebel CRM",
+            "Análisis y solución de errores e incidencias",
+            "Desarrollo y mantenimiento de funcionalidades",
+            "Creación y ajuste de Datafix para corregir inconsistencias de datos"
           ]}
-          
-          />
-     
-        </ul>
+          technologies={[
+            "Siebel CRM",
+            "JavaScript",
+            "SQL",
+            "Datafix",
+            "Testing"
+          ]}
+          classProp="animate-enter animate-delay-2"
+        />
+
+        <JobCard
+          company="Honeywell Chihuahua"
+          role="Creador Multimedia"
+          period="Marzo de 2022 – agosto de 2023"
+          category="Producción audiovisual"
+          icon="fa-video"
+          tasks={[
+            "Captura y edición de fotografía y video",
+            "Diseño de comunicados y contenido visual corporativo",
+            "Actualización de materiales de comunicación interna",
+            "Gestión de contenido para canales de comunicación"
+          ]}
+          technologies={[
+            "Photoshop",
+            "Premiere Pro",
+            "After Effects",
+            "Fotografía",
+            "Edición de video"
+          ]}
+          classProp="animate-enter animate-delay-2"
+        />
+      </div>
+    </section>
+
+    <!-- Herramientas y competencias -->
+    <section>
+      <div class="mb-6 flex flex-col gap-3 sm:mb-8 md:flex-row md:items-end md:justify-between">
+        <div>
+          <div class="mb-3 inline-flex items-center gap-2 rounded-full bg-sky-400/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-sky-400 sm:text-sm">
+            <i class="fa-solid fa-layer-group"></i>
+            Stack técnico y competencias
+          </div>
+
+          <h2 class="font-title text-2xl font-bold text-white sm:text-3xl">
+            Herramientas y habilidades
+          </h2>
+        </div>
+
+        <p class="max-w-md text-sm leading-relaxed text-text-muted sm:text-base">
+          Herramientas utilizadas en producción multimedia y tecnologías relacionadas con desarrollo web y programación.
+        </p>
       </div>
 
-	</section>
-    
+      <div class="grid grid-cols-1 items-stretch gap-5 lg:grid-cols-3 lg:gap-6">
+        <div class="animate-enter animate-delay-3">
+           <Skills
+          title="Diseño y audiovisual"
+          description="Edición, composición y producción de contenido"
+          icon="fa-photo-film"
+          skills={[
+            { name: "Photoshop", abbreviation: "Ps", description: "Edición de imagen" },
+            { name: "After Effects", abbreviation: "Ae", description: "Edición y composición audiovisual" },
+            { name: "Premiere Pro", abbreviation: "Pr", description: "Edición de video" },
+            { name: "DaVinci Resolve", abbreviation: "Dr", description: "Edición y color" },
+            { name: "Audition", abbreviation: "Au", description: "Edición de audio" },
+            { name: "Lightroom", abbreviation: "Lr", description: "Procesamiento fotográfico" },
+            { name: "Illustrator", abbreviation: "Ai", description: "Diseño vectorial" },
+            { name: "InDesign", abbreviation: "Id", description: "Diseño editorial" }
+          ]}
+         />
+        </div>
+       
+        <div class="animate-enter animate-delay-4">
+          <Skills
+          title="Desarrollo y web"
+          description="Programación y tecnologías web"
+          icon="fa-code"
+          variant="sky"
+          skills={[
+            { name: "JavaScript", abbreviation: "JS", description: "Interactividad web" },
+            { name: "Python", abbreviation: "Py", description: "Programación y análisis de datos" },
+            { name: "Desarrollo web", abbreviation: "</>", description: "HTML, CSS y tecnologías web" }
+          ]}
+          />
+        </div>
+        
+        <div class="animate-enter animate-delay-5">
+           <Skills
+          title="Idiomas"
+          description="Comunicación y comprensión"
+          icon="fa-language"
+          skills={[
+            { name: "Inglés", abbreviation: "EN", description: "Nivel aproximado B1–B2" }
+          ]}
+          />
+        </div>
+      </div>
+    </section>
+  </div>
 </Layout>
