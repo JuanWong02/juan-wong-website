@@ -1,6 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/src/assets/fonts/SpaceGrotesk-VariableFont_wght.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+}
 
 @theme {
    /* Paleta principal */
