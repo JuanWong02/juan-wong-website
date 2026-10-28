@@ -1,27 +1,56 @@
 ---
-import '../styles/global.css';
+import Layout from '../layouts/Layout.astro';
 import NotFound from '../assets/img/not-found.webp';
-const title = "Página no encontrada";
-const message = "Parece que te perdiste, regresa al inicio y descubre más sobre mi"
+import { Image } from 'astro:assets';
+
+const title = 'Página no encontrada';
+const message = 'Parece que te perdiste. Regresa al inicio y descubre más sobre mí.';
 ---
 
+<Layout title={`Ing. Juan Carlos Wong Reyes | ${title}`} showHeader={true}>
+  <section class="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 py-12 text-center text-text">
 
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-  </head>
-  <body class="flex flex-col items-center justify-center h-screen bg-primary text-center mt-4">
-    <h1 class=" font-title font-bold text-container rounded-3xl  p-4 mt-4 text-6xl sm:text-8xl lg:text-10xl sm:p-2">{title}</h1>
-    <a href="/juan-wong-website/" class=" font-text font-medium m-8 px-3 py-2 sm:px-5 sm:py-4 md:px-8 md:py-4  bg-button-active text-container  rounded-lg text-xl sm:text-xl md:text-3xl hover:font-bold transition-transform duration-200 delay-100 hover:scale-150">
-      Volver al inicio
-    </a>
-      <img class="rounded-full mx-auto h-[30%] mt-2  sm:h-[35%]  md:h-[40%] mb-4 hover:scale-105 hover:rotate-2 transition-transform duration-200 delay-100" src={NotFound.src} alt="Imagen tipo sketch de Juan Carlos Wong Reyes de perfil, mirando hacia la izquierda">
+    <div class="relative z-10 flex w-full max-w-2xl flex-col items-center">
+
+      <p class="animate-enter mb-3 font-title text-xs font-semibold uppercase tracking-[0.25em] text-secondary sm:text-sm">
+        Error 404
+      </p>
+
+      <h1 class="animate-enter animate-delay-1 font-title text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
+        Página no <span class="text-secondary">encontrada</span>
+      </h1>
+
+      <!-- Imagen  -->
+      <div class="animate-enter animate-delay-2 relative my-10">
+        <div class="pointer-events-none absolute inset-[-2rem] rounded-full bg-secondary/10 blur-3xl"></div>
+
+        <div class="group relative h-44 w-44 overflow-hidden rounded-full border border-border bg-container shadow-xl shadow-black/20 transition-all duration-500 ease-out hover:scale-105 hover:-rotate-2 hover:border-secondary/70 sm:h-56 sm:w-56">
+          <Image
+            src={NotFound}
+            alt="Ilustración tipo sketch de Juan Carlos Wong Reyes de perfil"
+            class="h-full w-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-110"
+            widths={[176, 224, 352, 448]}
+            sizes="(min-width: 640px) 224px, 176px"
+            quality={80}
+          />
+        </div>
+      </div>
+
+      <p class="animate-enter animate-delay-3 max-w-md text-base leading-relaxed text-text-muted sm:text-lg">
+        {message}
+      </p>
+
+      <!-- Botón de regreso -->
    
-    <p class=" font-text text-lg sm:text-xl md:text-2xl mt-4 text-container pb-3 pt-1 max-w-[85%]  ">{message}</p>
-  </body>
-</html>
+      <a
+        href="/juan-wong-website/"
+        class="animate-enter animate-delay-4 mt-8 inline-flex items-center justify-center gap-3 rounded-xl bg-secondary px-6 py-3.5 font-title text-sm font-bold text-background transition-all duration-300 hover:-translate-y-0.5 hover:bg-amber-300 hover:shadow-lg hover:shadow-secondary/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-secondary sm:w-fit"
+      >
+        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+      Volver al inicio
+      </a>
+
+
+    </div>
+  </section>
+</Layout>
